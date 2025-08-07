@@ -1,47 +1,33 @@
-// #include "MaterialExpressionCheckerboard.h"
+#include "MaterialExpressionCheckerboard.h"
+#include "MaterialCompiler.h"
 
-// // UMaterialExpressionCheckerboard::UMaterialExpressionCheckerboard(const FObjectInitializer &ObjectInitializer)
-// //     : Super(ObjectInitializer)
-// UMaterialExpressionCheckerboard::UMaterialExpressionCheckerboard()
-// {
-//   // Description = TEXT("Checkerboard");
+#if WITH_EDITOR
 
-//   // Code = TEXT(R"(
-//   //       float2 uv_scaled = UV * Scale;
-//   //       float checker = fmod(floor(uv_scaled.x) + floor(uv_scaled.y), 2.0);
-//   //       return lerp(float3(0, 0, 0), float3(1, 1, 1), checker);
-//   //   )");
+int32 UMaterialExpressionCheckerboard::Compile(FMaterialCompiler *Compiler, int32 OutputIndex)
+{
+  // Compile UV input or fallback to default texture coordinates (channel 0)
+  int32 UVCode = UV.Expression ? UV.Compile(Compiler) : Compiler->TextureCoordinate(0, false, false);
 
-//   // OutputType = CMOT_Float3; // RGB
+  // Multiply UV by Tiling factor
+  int32 ScaledUV = Compiler->Mul(UVCode, Compiler->Constant(Tiling));
 
-//   // // UV Input
-//   // Inputs.Add(FExpressionInput());
-//   // Inputs[0].InputName = TEXT("UV");
+  // Floor(ScaledUV)
+  int32 Floored = Compiler->Floor(ScaledUV);
 
-//   // // Scale Input
-//   // Inputs.Add(FExpressionInput());
-//   // Inputs[1].InputName = TEXT("Scale");
+  // Sum X + Y components
+  int32 XComp = Compiler->ComponentMask(Floored, true, false, false, false); // x
+  int32 YComp = Compiler->ComponentMask(Floored, false, true, false, false); // y
+  int32 Sum = Compiler->Add(XComp, YComp);
 
-//   // bShowOutputNameOnPin = true;
-//   // bCollapsed = false;
+  // Modulo 2
+  int32 Checker = Compiler->Fmod(Sum, Compiler->Constant(2.0f));
 
-//   Description = TEXT("Checkerboard");
+  return Checker;
+}
 
-//   // HLSL code - use inputs Input0=UV, Input1=Scale
-//   Code = TEXT(R"(
-//         float2 uv = Input0;
-//         float scale = Input1;
-//         float2 coord = floor(uv * scale);
-//         float checker = fmod(coord.x + coord.y, 2.0);
-//         return checker;
-//     )");
+void UMaterialExpressionCheckerboard::GetCaption(TArray<FString> &OutCaptions) const
+{
+  OutCaptions.Add(TEXT("Checkerboard"));
+}
 
-//   OutputType = CMOT_Float1; // single float output
-
-//   // Set number of inputs
-//   Inputs = 2;
-
-//   // Assign input names
-//   InputNames.Add(TEXT("UV"));
-//   InputNames.Add(TEXT("Scale"));
-// }
+#endif
