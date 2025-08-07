@@ -25,8 +25,19 @@ public class MyShaderPluginV1 : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
+				// old
+				// "Core",
 				// ... add other public dependencies that you statically link with here ...
+
+				// // new
+				"Core",
+				// "CoreUObject",
+				// "Engine",
+				// "RenderCore",
+				// "RHI",
+				// "ShaderCore",
+				"UnrealEd",        // Editor-only module
+				"MaterialEditor"   // For material editor integration
 			}
 			);
 			
