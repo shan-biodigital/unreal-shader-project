@@ -12,9 +12,9 @@ DEFINE_LOG_CATEGORY_STATIC(LogMyPlugin, Log, All);
 void FMyShaderPluginV1Module::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("yo!!!")));
+	FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("heyo!!!")));
 
-	UE_LOG(LogTemp, Warning, TEXT("yo!!!"));
+	UE_LOG(LogTemp, Warning, TEXT("heyo!!!"));
 }
 
 void FMyShaderPluginV1Module::ShutdownModule()

@@ -31,10 +31,10 @@ public class MyShaderPluginV1 : ModuleRules
 
 				// // new
 				"Core",
-				// "CoreUObject",
-				// "Engine",
-				// "RenderCore",
-				// "RHI",
+				"CoreUObject",
+				"Engine",
+				"RenderCore",
+				"RHI",
 				// "ShaderCore",
 				"UnrealEd",        // Editor-only module
 				"MaterialEditor"   // For material editor integration
@@ -50,6 +50,8 @@ public class MyShaderPluginV1 : ModuleRules
 				"Slate",
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
+				"UnrealEd",        // Editor-only module
+				"MaterialEditor"   // For material editor integration
 			}
 			);
 		
