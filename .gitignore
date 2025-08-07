@@ -73,3 +73,27 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Ignore all Binaries, Build, Intermediate, Saved, and DerivedDataCache folders in subdirectories
+**/Binaries/
+**/Build/
+**/DerivedDataCache/
+**/Intermediate/
+**/Saved/
+
+# Ignore project-specific files that are not needed in source control
+**/*.sln
+**/*.opensdf
+**/*.sdf
+**/*.suo
+**/*.tmp
+**/*.user
+**/*.userprefs
+**/*.VC.db
+**/*.VC.opendb
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
