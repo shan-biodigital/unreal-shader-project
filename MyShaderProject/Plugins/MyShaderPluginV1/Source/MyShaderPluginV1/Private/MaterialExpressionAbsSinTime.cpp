@@ -1,13 +1,16 @@
 // #include "MaterialExpressionAbsSinTime.h"
 
-// UMaterialExpressionAbsSinTime::UMaterialExpressionAbsSinTime()
+// UMaterialExpressionAbsSinTime::UMaterialExpressionAbsSinTime(const FObjectInitializer &ObjectInitializer)
+//     : Super(ObjectInitializer)
 // {
 //   Description = TEXT("abs(sin(Time))");
 //   OutputType = CMOT_Float1;
 //   Code = TEXT("return abs(sin(Time));");
 
+//   Inputs.Empty();
+
 //   // Add one input named "Time"
-//   Inputs.Add(FCustomInput{FName("Time")});
+//   // Inputs.Add(FCustomInput{FName("Time")});
 
 //   // Desc = TEXT("abs(sin(Time))");
 // }

@@ -7,13 +7,12 @@
 
 // // UCLASS()
 // UCLASS(collapsecategories, hidecategories = Object, meta = (DisplayName = "AbsSinTimeHello", Category = "Custom"))
-// // class MYSHADERPLUGINV1_API UMaterialExpressionAbsSinTime : public UMaterialExpressionCustom
 // class MYSHADERPLUGINV1_API UMaterialExpressionAbsSinTime : public UMaterialExpressionCustom
 // {
 //   GENERATED_BODY()
 
 // public:
-//   UMaterialExpressionAbsSinTime();
+//   UMaterialExpressionAbsSinTime(const FObjectInitializer &ObjectInitializer);
 
 // #if WITH_EDITOR
 //   virtual int32 Compile(FMaterialCompiler *Compiler, int32 OutputIndex) override;
