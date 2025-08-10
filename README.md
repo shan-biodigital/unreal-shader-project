@@ -44,9 +44,9 @@ Anyways, I figured the next approach would be to make a custom C++ plugin with `
 
 ---
 
-### Uh oh, it requires writing complex C++ compiler code
+### Uh oh, it requires writing (complex?) C++ compiler code
 
-However, the problem with this approach seemed to be that I need to write complex C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
+However, the problem with this approach seemed to be that I need to write (complex?) C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
 
 ---
 
