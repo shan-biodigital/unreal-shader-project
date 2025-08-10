@@ -2,7 +2,7 @@
 
 # Overview
 
-Started looking into unreal and how we could create custom HLSL shaders. I'm still getting used to to engine (since I never used it before) and ran into lots of compiler errors, but managed to make some progress.
+Started looking into Unreal and how we could create custom HLSL shaders. I'm still getting used to to engine (since I never used it before) and ran into lots of compiler errors, but managed to make some progress.
 
 # Progress
 
@@ -64,10 +64,10 @@ Leaving some commands here incase I ever pick this up again.
 
 ```bash
 # seems like we need to remove binaries and intermediate folders first
-# otherwise, unreal does not actually do the build (which is very annoying)
+# otherwise, Unreal does not actually do the build (which is very annoying)
 make clean
 
 # rebuild C++ code with the following command
-# restarting unreal is way too slow, especially if you run into any compiler errors
+# restarting Unreal is way too slow, especially if you run into any compiler errors
 /Users/Shared/Epic\ Games/UE_5.4/Engine/Build/BatchFiles/RunUAT.sh BuildCookRun -project="/Users/<username>/Desktop/dev/unreal-projects/MyShaderProject/MyShaderProject.uproject"  -noP4 -platform=Mac -clientconfig=Development -serverconfig=Development -cook -allmaps -build
 ```
