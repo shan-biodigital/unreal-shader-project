@@ -8,7 +8,7 @@ Started looking into Unreal and how we could create custom HLSL shaders. I'm sti
 
 ### Installing Unreal
 
-First, I needed to install the Unreal engine, but kept running into errors while trying to instal the Epic Games Store. Just glad I was (eventually) able to install it, and that it runs (at all) on my old 2019, Intel chip, Mac. Here's the error that I kept getting, not sure if your team faced this before (but I got past it so no worries)...
+First, I needed to install the Unreal engine, but kept running into errors while trying to instal the Epic Games Store. Just glad I was (eventually) able to install it, and that it runs (at all) on my 2019, Intel chip, Mac. Here's the error that I kept getting, not sure if your team faced this before (but I got past it so no worries)...
 
 ![Epic Games Launcher Error](./MyShaderProject/Screenshots/01-epic-games-launcher-error.png)
 
