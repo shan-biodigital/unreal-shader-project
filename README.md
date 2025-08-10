@@ -84,12 +84,50 @@ I'm happy to learn how to do this, but I'm mainly not sure how to prioritize my 
 
 ### Let's go back to the basics + write HLSL code in the Material editor
 
-All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. And it seems to be the same node-based approach to create post-processing effects so maybe this is the way to go.
+All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done for simple cases. We can create custom inputs, and even multiple outputs. And it seems to be the same node-based approach to create post-processing effects so maybe this is the way to go.
 
-Here's a fun little ray marching example where SDF blends smoothly into a plane. Leaving the code here incase anyone wants to try it. (As always, gotta thank Inigo Quilez for tutorials on SDFs.)
+Note: Looks like it does not support defining functions inside the text editor itself. So it is a little more limited than I would've liked.
+
+Here's a fun little ray marching example where SDF blends smoothly into a plane. Still pretty hard to work with since I can't just create helper functions so I expanded the functions (SDSphere, SmoothMin) out. (As always, gotta thank Inigo Quilez his work on SDFs.)
+
+![Math Lady Thinking](./MyShaderProject/Screenshots/10-simple-sdf-shader.mov)
 
 ```HLSL
+// inputs
+// UV (tex coords)
+// custom_y ()
+// k (smoothing factor)
 
+float2 uv = float2(UV.x, 1.0 - UV.y);
+uv = (uv - 0.5) * 2.0;
+float3 ro = float3(0, 0, -1);
+float3 rd = normalize(float3(uv, 1));
+float d = 100.0;
+float td = 0.0;
+float r = 0.25;
+for (int i = 0; i < 40; i++) {
+  float3 p = ro + rd * td;
+  float3 c1 = float3(0, custom_y + 0.25, 0);
+  float3 c2 = float3(0, 0, 0);
+  float d1 = length(p - c1) - r;
+  float d2 = length(p - c2) - r;
+  float h = clamp(0.5 + 0.5 * (d2 - d1) / k, 0.0, 1.0);
+  float m = lerp(d2, d1, h) - k * h * (1.0 - h);
+  float d = m;
+  // d = min(d, m);
+  //d = d1;
+  if (abs(d) < 0.001) {
+    break;
+  }
+  if (td > 100.0) {
+    break;
+  }
+  td = td + d;
+}
+float3 col = float3(0, 0, 0);
+col.rg = uv;
+col.rgb = float3(td, td, td) * 0.05;
+return col;
 ```
 
 # Questions
