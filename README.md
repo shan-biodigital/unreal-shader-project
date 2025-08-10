@@ -46,11 +46,11 @@ Finally, I started to think that the ideal approach would be for graphics engine
 
 To accomplish that, it seemed I needed to create a C++ plugin using `UMaterialExpressionCustom`, not `UMaterialExpression`. The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code. But I kept running into linker errors when compiling the code. Have you or your team seen this before? Is there a workaround?
 
-### More involved approach to solve the problem?
+### More involved approach to solve this problem?
 
 Another approach that I saw was that engineers could create `.usf` files (basically Unreal’s version of HLSL) and draw to render targets. Seems like this required more C++ setup which I haven’t fully explored yet. I could learn how to do this, but again, not sure how to prioritize my work between Unreal (C++), Maya (Python), 3D Web Engine (WebGL, Typescript). Way too much to context switch between lol.
 
-### Alright, let's just get back to the basics and write some HLSL code
+### That's enough for now, let's just get back to the basics and write some HLSL code
 
 All this lead me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
 
