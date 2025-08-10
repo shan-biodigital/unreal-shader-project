@@ -8,21 +8,21 @@ Started looking into unreal and how we could create custom HLSL shaders. I'm sti
 
 First, I needed to install the Unreal engine, but kept running into errors while trying to instal the Epic Games Store. May have been related to Sophos, but it's still a little unclear to me. Just glad I was able to install it and that it runs (at all) on my old 2019, Intel chip, Mac. Here's the error that I kept getting, not sure if your team faced this before (but I got past it so no worries)...
 
-![Epic Games Launcher Error](Screenshots/01-epic-games-launcher-error.png)
+![Epic Games Launcher Error](./MyShaderProject/Screenshots/01-epic-games-launcher-error.png)
 
 Then, I wanted to create the simplest material shader to learn the basics. Here's a material that interpolates between 2 textures based on remapped sin. Had some experience with Unity shader graph, so this wasn't too bad.
 
-![Lerp Textures](Screenshots/02-lerp-textures.png)
+![Lerp Textures](./MyShaderProject/Screenshots/02-lerp-textures.png)
 
 Then, I wanted to figure out how to write custom HLSL shader code (since it seemed to be the best place where a graphics engineer could help). Here's some shader code that creates a checkerboard pattern and uses it as a mask to switch between textures. Techinically, it's animated based on time, but I don't want to upload videos to GitHub. This was also pretty straightforward.
 
-![Custom Material Node](Screenshots/03-custom-material-node.png)
+![Custom Material Node](./MyShaderProject/Screenshots/03-custom-material-node.png)
 
 Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix? Also, it wasn't clear how this HLSL code would be shared with artists. Is it an asset that could be saved, and used by another person if they do `git pull`?
 
 Anyways, I figured the next approach would be to make a custom C++ plugin with `UMaterialExpression`. Made an example with Checkerboard pattern that takes in customizable tiling values and outputs color. ChatGPT kinda slowed me down here because (presumably) it kept mixing up Unreal 4 code with Unreal 5 code. Anyway, eventually got it working.
 
-![Checkerboard Shader Plugin](Screenshots/05-checkerboard-shader-plugin.png)
+![Checkerboard Shader Plugin](./MyShaderProject/Screenshots/05-checkerboard-shader-plugin.png)
 
 However, the problem with this approach seemed to be that I need to write weird C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
 
