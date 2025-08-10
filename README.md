@@ -56,13 +56,17 @@ However, the problem with this approach seemed to be that I need to write (compl
 
 ### Maybe there is a way forward with `UMaterialExpressionCustom`
 
-Finally, I started to think that the ideal approach would be for graphics engineers to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use. My initial thought process on this is that the artist + eng would agree on inputs + outputs of a custom node, and the eng/tech artist does the HLSL math coding?
+Finally, I started to think that the ideal approach would be for graphics engineers to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use.
+
+My initial thought process on this is that the artist + eng would agree on inputs + outputs of a custom node, and the eng/tech artist does the HLSL math coding?
 
 ---
 
 ### But I keep getting compiler errors
 
-To accomplish that, it seemed I needed to create a C++ plugin using `UMaterialExpressionCustom`, not `UMaterialExpression`. The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code. But I kept running into linker errors when compiling the code. Have you or your team seen this before? Is there a workaround?
+To accomplish that, it seemed I needed to create a C++ plugin using `UMaterialExpressionCustom`, not `UMaterialExpression`. The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code.
+
+But I kept running into linker errors when compiling the code. Have you or your team seen this before? Is there a workaround?
 
 ---
 
