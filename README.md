@@ -80,7 +80,7 @@ I could learn how to do this, but again, not sure how to prioritize my work betw
 
 ### Let's go back to the basics + write HLSL code in the Material editor
 
-All this lead me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
+All this led me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
 
 # Questions
 
