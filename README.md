@@ -72,7 +72,7 @@ Another approach that I saw was that engineers could create `.usf` files (basica
 
 All this lead me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
 
-# Question
+# Questions
 
 All this exploration gave me some questions.
 
