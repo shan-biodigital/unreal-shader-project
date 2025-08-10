@@ -20,7 +20,7 @@ Then, I wanted to create the simplest material shader to learn the basics. Here'
 
 ![Lerp Textures](./MyShaderProject/Screenshots/02-lerp-textures.png)
 
---
+---
 
 ### Writing custom HLSL Shader code
 
@@ -28,9 +28,13 @@ Then, I wanted to figure out how to write custom HLSL shader code (since it seem
 
 ![Custom Material Node](./MyShaderProject/Screenshots/03-custom-material-node.png)
 
+---
+
 ### Easy, but no Vim commands, or auto-complete...
 
 Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix?
+
+---
 
 ### Maybe a C++ plugin can fix this (custom Checkerboard node)
 
@@ -38,21 +42,31 @@ Anyways, I figured the next approach would be to make a custom C++ plugin with `
 
 ![Checkerboard Shader Plugin](./MyShaderProject/Screenshots/05-checkerboard-shader-plugin.png)
 
+---
+
 ### Uh oh, it requires writing complex C++ compiler code
 
 However, the problem with this approach seemed to be that I need to write complex C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
+
+---
 
 ### Maybe there is a way forward with `UMaterialExpressionCustom`
 
 Finally, I started to think that the ideal approach would be for graphics engineers to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use. My initial thought process on this is that the artist + eng would agree on inputs + outputs of a custom node, and the eng/tech artist does the HLSL math coding?
 
+---
+
 ### But I keep getting compiler errors
 
 To accomplish that, it seemed I needed to create a C++ plugin using `UMaterialExpressionCustom`, not `UMaterialExpression`. The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code. But I kept running into linker errors when compiling the code. Have you or your team seen this before? Is there a workaround?
 
+---
+
 ### More involved approach to solve this problem?
 
 Another approach that I saw was that engineers could create `.usf` files (basically Unreal’s version of HLSL) and draw to render targets. Seems like this required more C++ setup which I haven’t fully explored yet. I could learn how to do this, but again, not sure how to prioritize my work between Unreal (C++), Maya (Python), 3D Web Engine (WebGL, Typescript). Way too much to context switch between lol.
+
+---
 
 ### That's enough for now, let's just get back to the basics and write some HLSL code
 
