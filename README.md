@@ -20,6 +20,8 @@ Then, I wanted to create the simplest material shader to learn the basics. Here'
 
 ![Lerp Textures](./MyShaderProject/Screenshots/02-lerp-textures.png)
 
+--
+
 ### Writing custom HLSL Shader code
 
 Then, I wanted to figure out how to write custom HLSL shader code (since it seemed to be the best place where a graphics engineer could help). Here's some shader code that creates a checkerboard pattern and uses it as a mask to switch between textures. Techinically, it's animated based on time, but I don't want to upload videos to GitHub. This was also pretty straightforward.
