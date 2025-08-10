@@ -18,13 +18,13 @@ Then, I wanted to figure out how to write custom HLSL shader code (since it seem
 
 ![Custom Material Node](./MyShaderProject/Screenshots/03-custom-material-node.png)
 
-Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix? Also, it wasn't clear how this HLSL code would be shared with artists. Is it an asset that could be saved, and used by another person if they do `git pull`?
+Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix?
 
 Anyways, I figured the next approach would be to make a custom C++ plugin with `UMaterialExpression`. Made an example with Checkerboard pattern that takes in customizable tiling values and outputs color. ChatGPT kinda slowed me down here because (presumably) it kept mixing up Unreal 4 code with Unreal 5 code. Anyway, eventually got it working.
 
 ![Checkerboard Shader Plugin](./MyShaderProject/Screenshots/05-checkerboard-shader-plugin.png)
 
-However, the problem with this approach seemed to be that I need to write weird C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
+However, the problem with this approach seemed to be that I need to write complex C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
 
 Finally, I started to think that the ideal approach would be for graphics engineers to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use. My initial thought process on this is that the artist + eng would agree on inputs + outputs of a custom node, and the eng/tech artist does the HLSL math coding?
 
@@ -38,13 +38,25 @@ All this lead me back to using the Custom Material Expression node in the materi
 
 All this exploration gave me some questions.
 
-I’m wondering what approach your team takes for writing custom HLSL shader code?
+I’m wondering what approach your team takes for writing and sharing custom HLSL shader code?
 
-Is it any of the options I described above, or something else?
+- Is it writing HLSL code directly in the material node editor?
+- Is it with custom plugin in C++ code compiler code?
+- Is it with custom plugin using `UMaterialExpressionCustom` nodes where user can write HLSL code?
+- Is it with using the `.usf` approach with render targets which seems to require more C++ setup?
+- Or somthing else?
 
-Some of these approaches are pretty good. But the developer experience (dx) of writing shaders was not as smooth as working in Shadertoy. Is it just a pipedream to wish it could be better? Maybe, these are things your team already solved? Maybe, I just don't know enough about Unreal. (I remember that writing shaders in Unity was also pretty annoying.)
+Some of these approaches are pretty good. But the developer experience (dx) of writing shaders was not as smooth as working in Shadertoy.
 
-Finally, is there any documentation on how to learn/use Unreal engine? Do's, and don'ts? My understanding is that each team using Unreal may have different list of best practices, so I'm curious if something like that exists for me to read or learn from.
+- Is it just a pipedream to wish it could be better?
+- Maybe, these are things your team already solved?
+- Maybe, I just don't know enough about Unreal? (I remember that writing shaders in Unity was also pretty annoying.)
+
+Finally, some more general questions.
+
+- Is there any documentation on how to learn/use Unreal engine?
+- Do's, and don'ts?
+- My understanding is that each team using Unreal may have different list of best practices, so I'm curious if something like that exists for me to read or learn from.
 
 # Commands
 
