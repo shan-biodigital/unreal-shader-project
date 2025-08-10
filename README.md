@@ -32,7 +32,7 @@ Then, I wanted to figure out how to write custom HLSL shader code (since it seem
 
 ### Easy, but no Vim commands, or auto-complete...
 
-Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix?
+Realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix?
 
 ![No Vim Commands](./MyShaderProject/Screenshots/04-no-vim.png)
 
@@ -40,7 +40,7 @@ Quickly realized it is difficult to work out of the Custom Material Expression n
 
 ### Maybe a C++ plugin can fix this (custom Checkerboard node)
 
-Anyways, I figured the next approach would be to make a custom C++ plugin with `UMaterialExpression`. Made an example with Checkerboard pattern that takes in customizable tiling values and outputs color. ChatGPT kinda slowed me down here because (presumably) it kept mixing up Unreal 4 code with Unreal 5 code. Anyway, eventually got it working.
+Tried to solve this by making a custom C++ plugin with `UMaterialExpression`. Made an example with Checkerboard pattern that takes in customizable tiling values and outputs color. ChatGPT kinda slowed me down here because (presumably) it kept mixing up Unreal 4 code with Unreal 5 code. Anyway, eventually got it working.
 
 ![Checkerboard Shader Plugin](./MyShaderProject/Screenshots/05-checkerboard-shader-plugin.png)
 
@@ -56,17 +56,19 @@ However, the problem with this approach seemed to be that I need to write (compl
 
 ### Maybe there is a way forward with `UMaterialExpressionCustom`
 
-Finally, I started to think that the ideal approach would be for graphics engineers to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use.
+I think the ideal approach for graphics engineers is to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use. My thinking is that the artist + eng would agree on inputs values + outputs values, and the eng/tech artist does the HLSL/math coding?
 
-My initial thought process on this is that the artist + eng would agree on inputs + outputs of a custom node, and the eng/tech artist does the HLSL math coding?
+Using `UMaterialExpressionCustom` seemed like the way to go (not `UMaterialExpression`). The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code.
 
----
+Still not ideal because it's using raw text instead of an HLSL file, but that can be fixed if I could get this working.
 
-### But I keep getting compiler errors
+![Raw HLSL in VSCode](./MyShaderProject/Screenshots/07-raw-hlsl-in-vscode.png)
 
-To accomplish that, it seemed I needed to create a C++ plugin using `UMaterialExpressionCustom`, not `UMaterialExpression`. The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code.
+### Compiler errors!
 
-But I kept running into linker errors when compiling the code. Have you or your team seen this before? Is there a workaround?
+Unfortunately, I kept running into linker errors when compiling the code. Tried debugging this (obviously), but got stuck. Have you or your team seen this before? Is there a workaround?
+
+![Linker Errors](./MyShaderProject/Screenshots/08-linker-errors.png)
 
 ---
 
@@ -80,7 +82,7 @@ I could learn how to do this, but again, not sure how to prioritize my work betw
 
 ### Let's go back to the basics + write HLSL code in the Material editor
 
-All this led me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
+All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
 
 # Questions
 
