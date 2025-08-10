@@ -12,6 +12,8 @@ First, I needed to install the Unreal engine, but kept running into errors while
 
 ![Epic Games Launcher Error](./MyShaderProject/Screenshots/01-epic-games-launcher-error.png)
 
+---
+
 ### Starting off with a lerp shader
 
 Then, I wanted to create the simplest material shader to learn the basics. Here's a material that interpolates between 2 textures based on remapped sin. Had some experience with Unity shader graph, so this wasn't too bad.
