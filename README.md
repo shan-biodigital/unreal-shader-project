@@ -68,7 +68,7 @@ Another approach that I saw was that engineers could create `.usf` files (basica
 
 ---
 
-### That's enough for now, let's just get back to the basics and write some HLSL code
+### Let's go back to the basics and write some HLSL code
 
 All this lead me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
 
