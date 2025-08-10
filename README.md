@@ -90,7 +90,7 @@ Looks like it does not support defining functions inside the text editor itself.
 
 Here's a fun little ray marching example where SDF blends 2 spheres smoothly. Couldn't create helper functions so I expanded the SDSphere, SmoothMin. (As always, gotta thank Inigo Quilez his work on SDFs.)
 
-![Math Lady Thinking](./MyShaderProject/Screenshots/10-simple-sdf-shader.mov)
+https://github.com/user-attachments/assets/272c10fa-5a64-410b-8dba-89033b9bee41
 
 ```HLSL
 // inputs
