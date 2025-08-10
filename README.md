@@ -6,31 +6,51 @@ Started looking into Unreal and how we could create custom HLSL shaders. I'm sti
 
 # Technical Details
 
+### Installing Unreal
+
 First, I needed to install the Unreal engine, but kept running into errors while trying to instal the Epic Games Store. Just glad I was (eventually) able to install it, and that it runs (at all) on my old 2019, Intel chip, Mac. Here's the error that I kept getting, not sure if your team faced this before (but I got past it so no worries)...
 
 ![Epic Games Launcher Error](./MyShaderProject/Screenshots/01-epic-games-launcher-error.png)
+
+### Starting off with a lerp shader
 
 Then, I wanted to create the simplest material shader to learn the basics. Here's a material that interpolates between 2 textures based on remapped sin. Had some experience with Unity shader graph, so this wasn't too bad.
 
 ![Lerp Textures](./MyShaderProject/Screenshots/02-lerp-textures.png)
 
+### Writing custom HLSL Shader code
+
 Then, I wanted to figure out how to write custom HLSL shader code (since it seemed to be the best place where a graphics engineer could help). Here's some shader code that creates a checkerboard pattern and uses it as a mask to switch between textures. Techinically, it's animated based on time, but I don't want to upload videos to GitHub. This was also pretty straightforward.
 
 ![Custom Material Node](./MyShaderProject/Screenshots/03-custom-material-node.png)
 
+### Easy, but no Vim commands, or auto-complete...
+
 Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix?
+
+### Maybe a C++ plugin can fix this (custom Checkerboard node)
 
 Anyways, I figured the next approach would be to make a custom C++ plugin with `UMaterialExpression`. Made an example with Checkerboard pattern that takes in customizable tiling values and outputs color. ChatGPT kinda slowed me down here because (presumably) it kept mixing up Unreal 4 code with Unreal 5 code. Anyway, eventually got it working.
 
 ![Checkerboard Shader Plugin](./MyShaderProject/Screenshots/05-checkerboard-shader-plugin.png)
 
+### Uh oh, it requires writing complex C++ compiler code
+
 However, the problem with this approach seemed to be that I need to write complex C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
+
+### Maybe there is a way forward with `UMaterialExpressionCustom`
 
 Finally, I started to think that the ideal approach would be for graphics engineers to be able to write HLSL code directly in VS Code, and then create some plugin that artists can install and use. My initial thought process on this is that the artist + eng would agree on inputs + outputs of a custom node, and the eng/tech artist does the HLSL math coding?
 
+### But I keep getting compiler errors
+
 To accomplish that, it seemed I needed to create a C++ plugin using `UMaterialExpressionCustom`, not `UMaterialExpression`. The former allows engineers to write custom HLSL code while the latter seems to require C++ compiler code. But I kept running into linker errors when compiling the code. Have you or your team seen this before? Is there a workaround?
 
+### More involved approach to solve the problem?
+
 Another approach that I saw was that engineers could create `.usf` files (basically Unreal’s version of HLSL) and draw to render targets. Seems like this required more C++ setup which I haven’t fully explored yet. I could learn how to do this, but again, not sure how to prioritize my work between Unreal (C++), Maya (Python), 3D Web Engine (WebGL, Typescript). Way too much to context switch between lol.
+
+### Alright, let's just get back to the basics and write some HLSL code
 
 All this lead me back to using the Custom Material Expression node in the material editor. It's kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
 

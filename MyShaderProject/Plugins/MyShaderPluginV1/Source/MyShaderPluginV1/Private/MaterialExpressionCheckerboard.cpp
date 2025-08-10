@@ -1,7 +1,7 @@
 #include "MaterialExpressionCheckerboard.h"
 #include "MaterialCompiler.h"
 
-#if WITH_EDITOR
+// #if WITH_EDITOR
 
 int32 UMaterialExpressionCheckerboard::Compile(FMaterialCompiler *Compiler, int32 OutputIndex)
 {
@@ -30,4 +30,4 @@ void UMaterialExpressionCheckerboard::GetCaption(TArray<FString> &OutCaptions) c
   OutCaptions.Add(TEXT("Checkerboard"));
 }
 
-#endif
+// #endif
