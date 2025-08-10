@@ -48,7 +48,7 @@ Anyways, I figured the next approach would be to make a custom C++ plugin with `
 
 However, the problem with this approach seemed to be that I need to write (complex?) C++ compiler code. Not really the best developer experience (dx). Did your team figure out a way around this?
 
-![C++, not HLSL](./MyShaderProject/Screenshots/06-cpp-not-hlsl.png)
+![C++, not HLSL](./MyShaderProject/Screenshots/06-cpp-code-not-hlsl.png)
 
 ---
 
