@@ -51,8 +51,11 @@ public class MyShaderPluginV1 : ModuleRules
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
+				"Core",
 				"CoreUObject",
 				"Engine",
+				"RenderCore",
+				"RHI",
 				"Slate",
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
