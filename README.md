@@ -34,6 +34,8 @@ Then, I wanted to figure out how to write custom HLSL shader code (since it seem
 
 Quickly realized it is difficult to work out of the Custom Material Expression node (since no auto-complete, or vim commands, or EVEN keyboard shortcuts). Have ya'll run into this problem? Is there a fix?
 
+![No Vim Commands](./MyShaderProject/Screenshots/04-no-vim.png)
+
 ---
 
 ### Maybe a C++ plugin can fix this (custom Checkerboard node)
