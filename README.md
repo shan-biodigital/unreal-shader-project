@@ -86,9 +86,9 @@ I'm happy to learn how to do this, but I'm mainly not sure how to prioritize my 
 
 All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done for simple cases. We can create custom inputs, and even multiple outputs. And it seems to be the same node-based approach to create post-processing effects so maybe this is the way to go.
 
-Note: Looks like it does not support defining functions inside the text editor itself. So it is a little more limited than I would've liked.
+Looks like it does not support defining functions inside the text editor itself. So it is a little more limited than I would've liked.
 
-Here's a fun little ray marching example where SDF blends smoothly into a plane. Still pretty hard to work with since I can't just create helper functions so I expanded the functions (SDSphere, SmoothMin) out. (As always, gotta thank Inigo Quilez his work on SDFs.)
+Here's a fun little ray marching example where SDF blends 2 spheres smoothly. Couldn't create helper functions so I expanded the SDSphere, SmoothMin. (As always, gotta thank Inigo Quilez his work on SDFs.)
 
 ![Math Lady Thinking](./MyShaderProject/Screenshots/10-simple-sdf-shader.mov)
 
