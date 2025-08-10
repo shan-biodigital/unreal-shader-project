@@ -16,7 +16,7 @@ public:
 
   // Tiling amount (float)
   UPROPERTY(EditAnywhere, Category = MaterialExpressionCustom)
-  float Tiling = 8.0f;
+  float Tiling = 16.0f;
 
 #if WITH_EDITOR
   virtual int32 Compile(class FMaterialCompiler *Compiler, int32 OutputIndex) override;

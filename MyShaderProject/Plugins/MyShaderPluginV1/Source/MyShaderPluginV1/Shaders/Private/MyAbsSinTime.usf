@@ -1,0 +1,5 @@
+// MyAbsSinTime.usf
+float AbsSinTime(float Time)
+{
+    return abs(sin(Time));
+}

@@ -35,13 +35,19 @@ public class MyShaderPluginV1 : ModuleRules
 				"Engine",
 				"RenderCore",
 				"RHI",
-				// "ShaderCore",
+				// "ShaderCore", // Needed to use usf files, jk, deprecated in unreal 5
 				"UnrealEd",        // Editor-only module
 				"MaterialEditor"   // For material editor integration
 			}
 			);
-			
-		
+
+		// PrivateIncludePaths.Add("MyShaderPluginV1/Shaders/Private");
+		// PrivateIncludePaths.AddRange(
+		// 		new string[] {
+		// 				"MyShaderPluginV1/Shaders/Private"
+		// 		}
+		// );
+
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
@@ -51,6 +57,8 @@ public class MyShaderPluginV1 : ModuleRules
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 				"UnrealEd",        // Editor-only module
+				// "MaterialShader",    // <-- Add this, jk, doesn't exist
+				// "ShaderGraph", // ← required for UMaterialExpressionCustom
 				"MaterialEditor"   // For material editor integration
 			}
 			);
