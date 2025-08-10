@@ -84,7 +84,13 @@ I'm happy to learn how to do this, but I'm mainly not sure how to prioritize my 
 
 ### Let's go back to the basics + write HLSL code in the Material editor
 
-All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. Here's a fun little ray marching example where SDF blends smoothly into a plane.
+All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done. We can create custom inputs, and even multiple outputs. And it seems to be the same node-based approach to create post-processing effects so maybe this is the way to go.
+
+Here's a fun little ray marching example where SDF blends smoothly into a plane. Leaving the code here incase you want to try it. (As always, gotta thank Inigo Quilez for tutorials on SDFs.)
+
+```HLSL
+
+```
 
 # Questions
 
