@@ -86,9 +86,9 @@ I'm happy to learn how to do this, but I'm mainly not sure how to prioritize my 
 
 All this led me back to using the Custom Material Expression node in the material editor. Using it is kinda annoying, but it gets the job done for simple cases. We can create custom inputs, and even multiple outputs. And it seems to be the same node-based approach to create post-processing effects so maybe this is the way to go.
 
-Looks like it does not support defining functions inside the text editor itself. So it is a little more limited than I would've liked.
+Edit: Just realized it doesn't support defining functions in the editor, so it is a little more limited than I would've liked.
 
-Here's a fun little ray marching example where SDF blends 2 spheres smoothly. Couldn't create helper functions so I expanded the SDSphere, SmoothMin. (As always, gotta thank Inigo Quilez his work on SDFs.)
+Here's a fun little video with a ray marching example where SDF blends 2 spheres smoothly. I couldn't create helper functions so I expanded the SDSphere, SmoothMin. (As always, gotta thank Inigo Quilez his work on SDFs.)
 
 https://github.com/user-attachments/assets/272c10fa-5a64-410b-8dba-89033b9bee41
 
