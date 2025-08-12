@@ -114,8 +114,6 @@ for (int i = 0; i < 40; i++) {
   float h = clamp(0.5 + 0.5 * (d2 - d1) / k, 0.0, 1.0);
   float m = lerp(d2, d1, h) - k * h * (1.0 - h);
   float d = m;
-  // d = min(d, m);
-  //d = d1;
   if (abs(d) < 0.001) {
     break;
   }
