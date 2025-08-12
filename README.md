@@ -76,8 +76,6 @@ Unfortunately, I kept running into linker errors when compiling the code. Tried 
 
 Another approach that I saw was that engineers could create `.usf` files (basically Unreal’s version of HLSL) and draw to render targets. Seems like this required more C++ setup which I haven’t fully explored yet.
 
-I'm happy to learn how to do this, but I'm mainly not sure how to prioritize my work between Unreal (C++), Maya (Python), 3D Web Engine (WebGL, Typescript). Way too much to context switch between lol.
-
 ![Math Lady Thinking](./MyShaderProject/Screenshots/09-math-lady-thinking.jpg)
 
 ---
