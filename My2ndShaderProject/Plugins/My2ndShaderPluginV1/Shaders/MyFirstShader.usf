@@ -1,0 +1,7 @@
+// MyFirstShader.usf
+
+// float4 MyFirstShaderFunc(float2 UV)
+// {
+    // Simple gradient
+    return float4(UVs.x, UVs.y, 0.5, 1.0);
+// }

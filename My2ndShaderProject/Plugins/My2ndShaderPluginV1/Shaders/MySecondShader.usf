@@ -1,0 +1,9 @@
+#include "/Engine/Public/Platform.ush"  // Required for all global shaders
+// #include "/Engine/Public/ShaderVersion.ush" // Optional, ensures version macros
+
+// Simple gradient shader (Second Shader Example)
+// float4 MySecondShaderFunc(float2 UV)
+float4 MySecondShaderFunc(float2 UV : TEXCOORD0) : SV_Target
+{
+    return float4(UV.x, UV.y, 0.5, 1.0);
+}
