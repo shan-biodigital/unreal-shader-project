@@ -80,6 +80,7 @@ DerivedDataCache/*
 **/DerivedDataCache/
 **/Intermediate/
 **/Saved/
+**/Content/
 
 # Ignore project-specific files that are not needed in source control
 **/*.sln

@@ -13,7 +13,7 @@ void FMyShaderPluginV1Module::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 	// std::string message = "hello world!!!";
-	FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("hello world!!!")));
+	FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("hello from here!!!")));
 
 	// UE_LOG(LogTemp, Warning, TEXT(message));
 }
