@@ -1,5 +1,10 @@
 // SimplePulsingColor.ush
 
+// Note: This does not work as the current code cannot have function return.
+// Must be a simple expression.
+// MyFirstShaderFunc example does work though.
+// TODO: Fix this at some point.
+
 // This function takes time and two colors, and returns a
 // new color that interpolates between them based on a sine wave.
 float4 PulseColor(float Time, float4 ColorA, float4 ColorB)
