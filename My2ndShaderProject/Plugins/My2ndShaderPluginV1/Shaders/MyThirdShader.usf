@@ -1,0 +1,11 @@
+// // Plugins/My2ndShaderPluginV1/Shaders/Private/MyThirdShader.usf
+// #include "/Engine/Public/Platform.ush"
+// #include "/Plugin/My2ndShaderPluginV1/Shaders/Private/MyHelpers.ush"
+// // #include "/Plugin/My2ndShaderPluginV1/Shaders/MyHelpers.ush"
+// // #include "/Plugin/My2ndShaderPluginV1/MyHelpers.ush"
+
+// // Shader function callable from C++
+// float3 MyThirdShaderFunc(float2 UV)
+// {
+//     return MyGradient(UV);
+// }
