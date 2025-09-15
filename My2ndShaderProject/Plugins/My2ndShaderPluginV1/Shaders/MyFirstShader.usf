@@ -5,3 +5,16 @@
     // Simple gradient
     return float4(UVs.x, UVs.y, 0.5, 1.0);
 // }
+
+// #include "/Engine/Public/Platform.ush"
+// #include "/Plugin/My2ndShaderPluginV1/MyHelpers.ush"
+// return float4(MyGradient(UVs), 1.0);
+
+
+// #include "/Engine/Public/Platform.ush"
+// #include "/Plugin/My2ndShaderPluginV1/MyHelpers.ush"
+
+// float4 MyFirstShaderFunc(float2 UV : TEXCOORD0) : SV_Target
+// {
+// return float4(MyGradient(UVs.xy), 1.0);
+// }

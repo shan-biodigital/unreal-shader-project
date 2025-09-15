@@ -1,0 +1,11 @@
+#pragma once
+
+#ifndef MY_HELPERS_INCLUDED
+#define MY_HELPERS_INCLUDED
+
+float3 MyGradient(float2 UV)
+{
+    return float3(UV.x, UV.y, 0.5);
+}
+
+#endif // MY_HELPERS_INCLUDED

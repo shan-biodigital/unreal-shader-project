@@ -9,7 +9,7 @@
 void FMy2ndShaderPluginV1Module::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("halo 4!!!")));
+	// FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("halo 4!!!")));
 
 	// This is the key step to tell the engine where to find your shaders.
 	// It maps the virtual shader path "/Plugin/My2ndShaderPluginV1" to your plugin's
